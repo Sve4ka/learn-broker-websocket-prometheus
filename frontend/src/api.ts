@@ -1,7 +1,7 @@
 // api.ts
 import { User, LoginData } from './types';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'http://localhost:8080';
 
 export const loginUser = async (data: LoginData): Promise<number> => {
     const response = await fetch(`${API_URL}/user/login`, {

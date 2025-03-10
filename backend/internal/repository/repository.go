@@ -13,3 +13,11 @@ type UserRepo interface {
 	ChangePWD(ctx context.Context, user models.UserChangePWD) (int, error)
 	Delete(ctx context.Context, id int) error
 }
+
+type ChatRepo interface {
+	Create(ctx context.Context, chatName string) (int, error)
+	AddUser(ctx context.Context, chatID int, userID int) (int, error)
+	Message(ctx context.Context, message models.MessageBase) (*models.Message, error)
+	Chat(ctx context.Context, chatID int) (*models.AllChat, error)
+	GetAllMessage(ctx context.Context) ([]models.Message, error)
+}

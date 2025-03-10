@@ -9,4 +9,5 @@ import (
 
 func InitRouting(r *gin.Engine, db *sqlx.DB, logger *log.Logs, middlewareStruct middleware.Middleware) {
 	_ = RegisterUserRouter(r, db, logger)
+	_ = RegisterChatRouter(r, db, logger)
 }
